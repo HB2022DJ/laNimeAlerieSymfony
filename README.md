@@ -1,7 +1,8 @@
 # laNimeAlerieSymfony
 
 <p align="center">
-    ![Ceci est un exemple d’image](https://example.com/bild.jpg)
+    (![image](https://user-images.githubusercontent.com/99896589/181642797-6568e0d5-8532-44c8-87dc-ea6169c16df2.png)
+)
 " width=300 />
 </p>
 
