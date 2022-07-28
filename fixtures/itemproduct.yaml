@@ -1,0 +1,19 @@
+App\Entity\ItemProduct:
+
+    itemproduct {0..1000}:
+      title: '<sentence(10)>'
+      description: '<text(200)>'
+      priceHt: <numberBetween(0.01, 100)>
+      tva: <numberBetween(0.01, 20)>
+      available: '<boolean(80)>'
+      isPromo: '<boolean(5)>'
+      itembrand: '@brand*'
+      itemcategory: '@category*'
+
+   
+   
+      
+        
+
+
+

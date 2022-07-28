@@ -1,0 +1,25 @@
+App\Entity\Category:
+
+
+    category01:
+      label: 'chien'
+    category02:
+      label: 'chat'
+    category03:
+      label: 'hamster'
+    category04:
+      label: 'tortue'
+    category05:
+      label: 'oiseau'
+    category06:
+      label: 'poisson'
+    category{1..50}:
+      label: '<firstName()>'
+      categoryCategory: '@category0*'
+  
+   
+      
+        
+
+
+

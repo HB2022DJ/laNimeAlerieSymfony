@@ -1,0 +1,23 @@
+App\Entity\StatusCommand:
+
+  status0:
+    status: 'acceptée'
+  status1:
+    status: 'en cours de preparation'
+  status2:
+    status: 'expédiée'
+  status3:
+    status: 'remboursée'
+  status4:
+    status: 'annuler'
+      
+
+    
+
+   
+   
+      
+        
+
+
+

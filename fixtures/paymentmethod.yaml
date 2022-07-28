@@ -1,0 +1,16 @@
+App\Entity\PaymentMethod:
+
+    paymentmethod1:
+      type : 'carte bancaire'
+
+    paymentmethod2:
+      type : 'payPal'
+      basket: '@basket*'
+
+   
+   
+      
+        
+
+
+

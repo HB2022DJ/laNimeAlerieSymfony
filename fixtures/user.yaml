@@ -1,0 +1,24 @@
+parameters:
+    password: '$2y$13$vldgApLZb5YMp51QTlLTyOSQf.TTiDYfd55FuaF6ZV2TAAdgE3enG' # 1234
+
+App\Entity\User:
+
+  account (template):
+    email: '<email()>'
+    roles: ['ROLE_USER']
+    password: '<{password}>'
+    lastName: '<lastName()>'
+    firstName: '<firstName()>'
+    birthAt: '<dateTimeBetween("-10 years", "now")>'
+    registrationAt: '<dateTimeBetween("-10 years", "now")>'
+    genre: '<boolean(50)>'
+    userpostaladdress: '@postaladdress*'
+        
+
+  account_admin (extends account):
+    email: 'admindj@gmail.com'
+    lastName: 'Admin'
+    firstName: 'Admin'
+    roles: ['ROLE_ADMIN']
+
+  account{0..1000} (extends account): ~

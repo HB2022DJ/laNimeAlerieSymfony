@@ -1,0 +1,16 @@
+App\Entity\PicturePath:
+
+    picturepath{0..1000}:
+      relativePath: 'https://picsum.photos/200/300'
+      itemproduct: '@itemproduct*'
+      
+
+    
+
+   
+   
+      
+        
+
+
+

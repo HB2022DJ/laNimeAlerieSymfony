@@ -1,0 +1,20 @@
+App\Entity\Review:
+
+  review{0..500}:
+    review: '<text(150)>'
+    note: '<numberBetween(1, 5)>'
+    itemproduct: '@itemproduct*'
+    reviewuser: '@account*'
+   
+
+      
+
+    
+
+   
+   
+      
+        
+
+
+

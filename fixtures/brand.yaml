@@ -1,0 +1,35 @@
+App\Entity\Brand:
+
+    brand {12..500}:
+      designation: '<word(10)>'
+
+    brand0:
+      designation: 'ANIMASTER'
+    brand1:
+      designation: 'ULTIMA'
+    brand2:
+      designation: 'PROPLAN'
+    brand3:
+      designation: 'PEDIGREE'
+    brand4:
+      designation: 'ROYAL CANIN'
+    brand5:
+      designation: 'FROLIC'
+    brand6:
+      designation: 'FRISKIES'
+    brand7:
+      designation: 'PURINA'
+    brand8:
+      designation: 'OPTIMUS'
+    brand9:
+      designation: 'NUTRO'
+    brand10:
+      designation: 'CROQ LA VIE'
+     
+
+   
+      
+        
+
+
+

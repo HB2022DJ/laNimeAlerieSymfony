@@ -1,0 +1,19 @@
+App\Entity\PostalAddress:
+
+    postaladdress{0..1000}:
+      lineOne: '<streetAddress()>' 
+      lineTwo: null
+      lineThree: null
+      postalCode: '<postCode()>'
+      city : '<city()>'
+      
+
+    
+
+   
+   
+      
+        
+
+
+
