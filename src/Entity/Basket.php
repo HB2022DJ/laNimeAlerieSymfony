@@ -12,8 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: BasketRepository::class)]
 #[ApiResource(
-    collectionOperations: ['get', 'post'],
-    itemOperations: ['get', 'put', 'delete'],
+    collectionOperations: ['get' => ["security" => "is_granted('ROLE_STATS')"]],
+    itemOperations: ['get' => ["security" => "is_granted('ROLE_STATS')"]],
 )]
 class Basket
 {

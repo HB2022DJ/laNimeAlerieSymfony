@@ -9,8 +9,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PicturePathRepository::class)]
 #[ApiResource(
-    collectionOperations: ['get'],
-    itemOperations: ['get'],
+    collectionOperations: ['get' => ["security" => "is_granted('ROLE_STATS')"]],
+    itemOperations: ['get' => ["security" => "is_granted('ROLE_STATS')"]],
 )]
 class PicturePath
 {

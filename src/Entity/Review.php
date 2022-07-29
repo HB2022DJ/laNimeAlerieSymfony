@@ -9,8 +9,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ReviewRepository::class)]
 #[ApiResource(
-    collectionOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
-    itemOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
+    collectionOperations: ['get' => ["security" => "is_granted('ROLE_STATS')"]],
+    itemOperations: ['get' => ["security" => "is_granted('ROLE_STATS')"]],
 )]
 class Review
 {

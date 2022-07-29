@@ -11,8 +11,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: StatusCommandRepository::class)]
 #[ApiResource(
-    collectionOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
-    itemOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
+    collectionOperations: ['get' => ["security" => "is_granted('ROLE_STATS') or is_granted('ROLE_ADMIN') "]],
+    itemOperations: ['get' => ["security" => "is_granted('ROLE_STATS') or is_granted('ROLE_ADMIN')"]],
 )]
 class StatusCommand
 {
