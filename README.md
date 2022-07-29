@@ -252,15 +252,14 @@ symfony console hautelook:fixtures:load --purge-with-truncate
     }
     ```
 
-- Ajouter dans le fichier config/services.yaml : 
+- Add to the config/services.yaml file :
     ```yaml
         App\OpenApi\JwtDecorator :
             décore : api_platform.openapi.factory
             arguments : ['@.inner']
     ```
-
-    - Création des rôles  
-        - Ajouter dans le fichier config/package/security.yaml avant firewall :
+   - Creation of the roles  
+        - Add in the config/package/security.yaml file before firewall :
         ```yaml 
            role_hierarchy :
             ROLE_ADMIN : ROLE_USER
