@@ -2,13 +2,19 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ItemProductRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ItemProductRepository::class)]
+#[ApiResource(
+    collectionOperations: ['get'],
+    itemOperations: ['get'],
+)]
 class ItemProduct
 {
     #[ORM\Id]
@@ -17,9 +23,22 @@ class ItemProduct
     private ?int $id = null;
 
     #[ORM\Column(nullable: true)]
+    #[
+        Assert\NotBlank([
+            'message' => 'merci de donner un Titre'
+        ])
+    ]
     private ?string $title = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[
+        Assert\NotBlank([
+            'message' => 'merci de donner une description'
+        ]),
+        Assert\Length(
+            max: 255
+        )
+    ]
     private ?string $description = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]

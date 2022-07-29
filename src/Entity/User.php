@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -9,8 +10,14 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+// use Symfony\Component\Validator\Constraints as Assert;
+// use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[ApiResource(
+    collectionOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
+    itemOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
+)]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -18,6 +25,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
+    // #[
+    //     Assert\Length([
+    //         'min' => 5,
+    //         'max' => 180,
+    //     ]),
+    //     Assert\NotBlank(),
+    //     Assert\Email(
+    //         [
+
+    //             'message' => 'merci de remplir avec un email valide'
+    //         ]
+    //     )
+    // ]
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
@@ -27,19 +47,61 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      */
+    // #[
+    //     Assert\NotBlank,
+    //     SecurityAssert\UserPassword([
+    //         'message' => 'merci de rentrer un mot de passe correct'
+    //     ])
+    // ]
     #[ORM\Column]
     private ?string $password = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    // #[
+    //     Assert\Length([
+    //         'min' => 5,
+    //         'max' => 50,
+    //     ]),
+    //     Assert\NotBlank(),
+
+    // ]
     private ?string $lastName = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    // #[
+    //     Assert\Length([
+    //         'min' => 4,
+    //         'max' => 50,
+    //     ]),
+    //     Assert\NotBlank(),
+    //     Assert\Type(
+    //         [
+
+    //             'message' => 'merci de remplir qu\'avec des lettres de votre prenom'
+    //         ]
+    //     )
+    // ]
     private ?string $firstName = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    // #[
+    //     Assert\Expression('this.getBirthAT() < this.getCreatedAt()'),
+    //     Assert\NotBlank([
+    //         'message' => 'Merci de remplir la date',
+    //     ]),
+    //     Assert\LessThan('today'),
+    //     Assert\GreaterThan('2003-01-01')
+    // ]
     private ?\DateTimeInterface $birthAt = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    // #[
+    //     Assert\NotBlank([
+    //         'message' => 'Merci de remplir la date',
+    //     ]),
+    //     Assert\LessThan('today'),
+
+    // ]
     private ?\DateTimeInterface $registrationAt = null;
 
     #[ORM\Column(nullable: true)]
@@ -52,6 +114,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private Collection $baskets;
 
     #[ORM\ManyToOne(inversedBy: 'users')]
+    // #[
+    //     Assert\NotBlank()
+    // ]
     private ?PostalAddress $userPostalAddress = null;
 
     public function __construct()

@@ -2,12 +2,17 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ContainRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ContainRepository::class)]
-#
+#[ApiResource(
+    collectionOperations: ['get'],
+    itemOperations: ['get'],
+)]
 class Contain
 {
     #[ORM\Id]
@@ -19,6 +24,9 @@ class Contain
     private ?int $quantity = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
+    #[
+        Assert\GreaterThanOrEqual(0),
+    ]
     private ?string $unitPrice = null;
 
     #[ORM\ManyToOne(inversedBy: 'contains')]

@@ -2,10 +2,16 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\PicturePathRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PicturePathRepository::class)]
+#[ApiResource(
+    collectionOperations: ['get'],
+    itemOperations: ['get'],
+)]
 class PicturePath
 {
     #[ORM\Id]
@@ -14,6 +20,11 @@ class PicturePath
     private ?int $id = null;
 
     #[ORM\Column(length: 150, nullable: true)]
+    #[
+        Assert\Length(
+            max: 150,
+        )
+    ]
     private ?string $relativePath = null;
 
     #[ORM\ManyToOne(inversedBy: 'itemPicture')]

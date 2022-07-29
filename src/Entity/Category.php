@@ -7,9 +7,13 @@ use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
-#[ApiResource()]
+#[ApiResource(
+    collectionOperations: ['get'],
+    itemOperations: ['get'],
+)]
 class Category
 {
     #[ORM\Id]
@@ -18,6 +22,14 @@ class Category
     private ?int $id = null;
 
     #[ORM\Column(length: 30, nullable: true)]
+    #[
+        Assert\NotBlank([
+            'message' => 'merci de donner un nom à votre categorie'
+        ]),
+        Assert\Length(
+            max: 30
+        )
+    ]
     private ?string $label = null;
 
     #[ORM\OneToMany(mappedBy: 'itemCategory', targetEntity: ItemProduct::class)]

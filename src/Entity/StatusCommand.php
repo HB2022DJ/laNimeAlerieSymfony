@@ -2,12 +2,18 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\StatusCommandRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: StatusCommandRepository::class)]
+#[ApiResource(
+    collectionOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
+    itemOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
+)]
 class StatusCommand
 {
     #[ORM\Id]
@@ -16,6 +22,14 @@ class StatusCommand
     private ?int $id = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    #[
+        Assert\Choice([
+            'choices' => [
+                'Réussi',
+                'Echoué',
+            ]
+        ])
+    ]
     private ?string $status = null;
 
     #[ORM\OneToMany(mappedBy: 'BasketStatus', targetEntity: Basket::class)]

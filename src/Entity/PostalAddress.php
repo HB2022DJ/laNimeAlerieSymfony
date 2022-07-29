@@ -2,12 +2,18 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\PostalAddressRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PostalAddressRepository::class)]
+#[ApiResource(
+    collectionOperations: ['get'],
+    itemOperations: ['get'],
+)]
 class PostalAddress
 {
     #[ORM\Id]
@@ -16,18 +22,32 @@ class PostalAddress
     private ?int $id = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    #[
+        Assert\Length([
+            'min' => 5,
+            'max' => 50,
+        ]),
+        Assert\NotBlank(),
+    ]
     private ?string $lineOne = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+
     private ?string $lineTwo = null;
 
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $lineThree = null;
 
     #[ORM\Column(nullable: true)]
+    #[
+        Assert\NotBlank(),
+    ]
     private ?string $postalCode = null;
 
     #[ORM\Column(length: 150, nullable: true)]
+    #[
+        Assert\NotBlank(),
+    ]
     private ?string $city = null;
 
     #[ORM\OneToMany(mappedBy: 'userPostalAddress', targetEntity: User::class)]

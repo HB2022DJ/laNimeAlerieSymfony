@@ -2,10 +2,16 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ReviewRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ReviewRepository::class)]
+#[ApiResource(
+    collectionOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
+    itemOperations: ['get' => ["security" => "is_granted('ROLE_ADMIN')"]],
+)]
 class Review
 {
     #[ORM\Id]
@@ -14,9 +20,27 @@ class Review
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[
+        Assert\Length(
+            [
+
+                'max' => 255
+            ]
+        )
+    ]
     private ?string $review = null;
 
     #[ORM\Column(nullable: true)]
+    #[
+        Assert\Count(
+            [
+                'min' => 0,
+                'max' => 5,
+                'maxMessage' => 'votre note doit etre comprise entre 0 et 5'
+            ]
+
+        )
+    ]
     private ?int $note = null;
 
     #[ORM\ManyToOne(inversedBy: 'itemReview')]

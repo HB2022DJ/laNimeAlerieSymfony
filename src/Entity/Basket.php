@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: BasketRepository::class)]
 #[ApiResource(
@@ -25,6 +26,12 @@ class Basket
     private ?\DateTimeInterface $basketAt = null;
 
     #[ORM\Column(length: 12, nullable: true)]
+    #[
+        Assert\NotBlank(),
+        Assert\Length(
+            max: 12
+        )
+    ]
     private ?string $number = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
