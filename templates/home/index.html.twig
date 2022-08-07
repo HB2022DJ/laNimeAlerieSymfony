@@ -1,0 +1,414 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LaNîmeAlerie
+{% endblock %}
+
+{% block body %}
+	<!DOCTYPE html>
+	<html lang="fr">
+
+		<head>
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/js/bootstrap.min.js" integrity="sha512-Hqe3s+yLpqaBbXM6VA0cnj/T56ii5YjNrMT9v+us11Q81L0wzUG0jEMNECtugqNu2Uq5MSttCg0p4KK0kCPVaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+			<link rel="stylesheet" href="css/style.css">
+			<title>la nîmes'aleries</title>
+			<!-- FAVICON -->
+			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+		</head>
+
+		<body>
+			<!-- START HEADER -->
+			<header>
+
+				<!-- LOGO NIMESALERIES -->
+				<div class="container bg-blue">
+					<div class="logo">
+						<img src="{{ asset('/build/img/nav-bar/logo.png') }}" alt="logo de lanimaleries">
+						<h1>LA NÎMES
+							<span class="green">'</span>ALERIES</h1>
+					</div>
+					<!-- END LOGO NIMESALERIES -->
+					<!--  START NAVBAR -->
+					<div class="container-nav">
+						<nav>
+							<ul>
+								<li><a href="">accueil</a></li>
+								<li><a href="">animaux</a></li>
+								<li><a href="">promotion</a></li>
+								<li><a href="">contact</a></li>
+								<li><a href="">ferme</a></li>
+								<li><a href="">hygiene</a></li>
+							</ul>
+						</nav>
+						<!-- END NAVBAR -->
+						<!-- BARRE DE RECHERCHE -->
+						<div class="search">
+							<form action="" method="post">
+								<input class="search-bar" type="search" name="search" id="search">
+								<label for="search"></label>
+								<input class="search-submit" type="submit" value="">
+							</form>
+						</div>
+					</div>
+					<!-- END BARRE DE RECHERCHE -->
+					<!-- CONNEXION USER -->
+					<div class="container-action">
+						<a href=""><img src="{{ asset('/build/img/icons/codicon_account.svg') }}" width="50" height="50" alt="connexion"></a>
+						<a href=""><img src="{{ asset('/build/img/icons/gif/panier-unscreen.gif') }}" alt="acces panier"></a>
+					</div>
+				</div>
+				<!-- END CONNEXION USER -->
+			</header>
+			<!-- START MAIN -->
+			<main>
+				<!-- START BANNIERE -->
+				<section id="banniere">
+					<a href="">
+						<div class="cart">
+							<h1>LA NÎMES
+								<span class="green">'</span>ALERIES</h1>
+							<p>ENVOYEZ-VOTRE</p>
+							<p></p>
+							<p>ANIMAL DANS L'ESPACE</p>
+							<p></p>
+						</div>
+					</a>
+				</section>
+				<!-- END BANNIERE -->
+
+				<!--START ANIMAUX  -->
+				<section id="animaux" class="bg-white">
+					<div>
+						<div class="bg-pattounes">
+							<img src="{{ asset('/build/img/background/Décorationpattounes.svg') }}" alt="background de pattounes">
+							<img src="{{ asset('/build/img/background/Décorationpattounes.svg') }}" alt="background de pattounes">
+
+						</div>
+						<h2>DECOUVREZ TOUTES NOTRE GAMME DE
+							<span class="green">PRODUITS</span>
+						</h2>
+						<P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, saepe?</P>
+					</div>
+
+					<!-- SELECTION ANIMAUX -->
+					<div class="container-animaux bg-blue">
+						<a href=""><img src="{{ asset('/build/img/icons/animaux/CHAT.svg') }}" alt="produits pour chat"></a>
+						<a href=""><img src="{{ asset('/build/img/icons/animaux/CHIEN.svg') }}" alt="produit pour chien"></a>
+						<a href=""><img src="{{ asset('/build/img/icons/animaux/RONGEUR.svg') }}" alt="produit pour rongeur"></a>
+						<a href=""><img src="{{ asset('/build/img/icons/animaux/TORTUE.svg') }}" alt="produit pour tortue"></a>
+						<a href=""><img src="{{ asset('/build/img/icons/animaux/OISEAU.svg') }}" alt="produit pour oiseau"></a>
+						<a href=""><img src="{{ asset('/build/img/icons/animaux/POISSON.svg') }}" alt="produit pour poisson"></a>
+					</div>
+				</section>
+				<!-- END ANIMAUX -->
+
+				<!-- START PROMOTION -->
+				<section id="promotion" class="bg-white">
+					<div>
+						<h2>NOS
+							<span class="green">PROMOTIONS</span>
+							DU MOMENT</h2>
+						<P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+					</div>
+
+					<!-- CAROUSEL PROMO -->
+					<div class="card m-5  " style="width: 15rem;">
+						<img src="{{ asset('/build/img/icons/promo/croquettes chiens 1.svg') }}" class="card-img-top mx-auto" alt="...">
+						<div class="card-body">
+							<i class="fa-solid fa-percent"></i>
+							<h5 class="card-title">CROQUETTES 14KG</h5>
+							<h3 class="card-title text-decoration-line-through text-black">20 €</h3>
+							<h3 class="card-title text-decoration-underline text-success ">10 €</h3>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<a href="#" class="btn btn-primary">acheter</a>
+						</div>
+					</div>
+					<div class="carousel"></div>
+					<!-- END CAROUSEL PROMO -->
+				</section>
+
+				<!-- START ARTICLES  -->
+
+				<section id="articles">
+					<h2>NOS
+						<span class="green">
+							CONSEILS</span>
+						EN HYGIENE ET FERMIER</h2>
+					<P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+					<!-- grid -->
+					<div class="container-grid">
+						<article class="cart-1" ->
+							<div class="cart-text">
+								<h2>
+									<span class="green">HYGIENE</span>
+								</h2>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolore dolor adipisci distinctio
+																																																																																																												                            dignissimos reprehenderit eos velit ad ipsa officia?</p>
+								<button class="btn btn-green">en savoir+<img src="" alt=""></button>
+							</div>
+						</article>
+						<article class="cart-2">
+							<div class="cart-text">
+								<h2>
+									<span class="green">FERMIER</span>
+								</h2>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolore dolor adipisci distinctio
+																																																																																																												                            dignissimos reprehenderit eos velit ad ipsa officia?</p>
+								<button class="btn btn-green">en savoir+<img src="" alt=""></button>
+							</div>
+						</article>
+					</div>
+					<!-- END GRID -->
+				</section>
+				<!-- END ARTICLES -->
+
+				<!-- START CONTACT -->
+				<section id="contact" class="bg-white">
+					<div class="bg-pattounes">
+						<img src="{{ asset('/build/img/background/Décorationpattounes.svg') }}" alt="background de pattounes">
+						<img src="{{ asset('/build/img/background/Décorationpattounes.svg') }}" alt="background de pattounes">
+					</div>
+					<h2>
+						<span class="green">QUI SOMMES-NOUS</span>
+					</h2>
+					<hr>
+					<p>M. Capard, je possede une boutique d’animalerie à Nîmes depuis 10 ans.
+						<br>
+						Je vend toutes sortes de produits, allant des produits bien connus comme
+						<br>
+						les croquettes, les niches ou encore les coussins, en passant par des services 3.0 comme
+																																																																								                l’envoi de votre animal dans l’espace .
+						<br>
+						Si vous avez des questions , vous pouvez me contacter ci-dessous :</p>
+
+					<!-- FORMULAIRE -->
+					<form action="traitement.php" method="post" class="formulaire">
+						<div class="marge">
+							<label for="lastname green">NOM</label>
+							<input type="text" name="lastname" id="lastname" placeholder="votre Nom">
+							<label for="firstname">Prenom</label>
+							<input type="text" name="firstname" id="firstname" placeholder="votre Prenom">
+						</div>
+
+						<div class="marge">
+							<label for="mail">E-mail</label>
+							<input type="email" name="mail" id="mail" placeholder="votre e-mail">
+						</div>
+
+						<div>
+							<textarea name="message" id="message" cols="30" rows="10" placeholder="votre message"></textarea>
+							<label for="message"></label>
+						</div>
+
+						<input class="btn-green" type="submit" id="commentaire" name="commentaire" value="Envoyer">
+						<label for="commentaire"></label>
+					</form>
+
+
+					<?php if(!empty($_GET['erreur'])){
+        echo '<br><p style="color: red">Erreur dans le formulaire ⛔️ Merci de remplir tout les champs correctement 😊 </p>';} ?>
+
+
+				</section>
+				<!-- END CONTACT -->
+
+				<!-- START SERVICES -->
+				<section id="services">
+					<div class="bg-blue container service">
+						<div>
+							<h2>
+								<span class="green">PAIEMENT SÉCURISÉ</span>
+							</h2>
+							<img src="images/icons/services/Cadenas de sécurité.svg" alt="">
+							<div>
+								<img src="images/icons/services/LOGO_CB.svg" alt="">
+								<img src="images/icons/services/LOGO_PPAL.svg" alt="">
+								<img src="images/icons/services/LOGO_MONEYBACK.svg" alt="">
+							</div>
+						</div>
+						<div>
+
+							<h2>
+								<span class="green">LIVRAISON RAPIDE</span>
+							</h2>
+							<img src="images/icons/services/fa-solid_truck.svg" alt="">
+							<p>Toute commande passée avant
+								<br>
+								midi
+								<br>
+								est expédiée le jour même</p>
+						</div>
+
+						<div>
+							<h2>
+								<span class="green">FIDÉLITÉ RECOMPENSÉE</span>
+							</h2>
+							<img src="images/icons/services/Tirelire.svg" alt="">
+							<p>Cumulez des points à chaque
+								<br>
+								achat</p>
+						</div>
+
+						<div>
+							<h2>
+								<span class="green">VOYAGE ESPACE</span>
+							</h2>
+							<img src="images/icons/services/Decollage.svg" alt="">
+							<p>Service vers l’infini
+								<br>
+								et au delà !</p>
+						</div>
+						<div>
+							<h2>
+								<span class="green">MON E-MAIL</span>
+							</h2>
+							<img src="images/icons/services/ant-design_mail-filled.svg" alt="">
+							<p>capard@gmail.com</p>
+						</div>
+						<div>
+							<h2>
+								<span class="green">MON TÉLÉPHONE</span>
+							</h2>
+							<img src="images/icons/services/Phone.svg" alt="">
+							<p>06 xx xx xx xx</p>
+						</div>
+					</div>
+				</section>
+				<!-- END SERVICES -->
+
+				<!--  START TEMOIGNAGES -->
+				<section
+					id="temoignages">
+					<!-- <div class="container-carousel">
+																																																												                <h2><span class="green">TÉMOIGNAGES</span></h2>
+																																																												                <hr>
+																																																												                <img src="" alt="">
+																																																												                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, impedit?</p>
+																																																												            </div>  -->
+
+					<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						</div>
+
+						<div class="carousel-inner">
+							<div class="carousel-item active" data-bs-interval="10000">
+								<img src="" class="d-block w-100" alt="...">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>First slide label</h5>
+									<p>Some representative placeholder content for the first slide.</p>
+								</div>
+
+							</div>
+							<div class="carousel-item" data-bs-interval="2000">
+								<img src="" class="d-block w-200px" alt="...">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>Second slide label</h5>
+									<p>Some representative placeholder content for the second slide.</p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="" class="d-block w-100" alt="...">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>Sarah</h5>
+									<p>Some representative placeholder content for the third slide.</p>
+								</div>
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</section>
+
+
+				<!-- END TEMOIGNAGES -->
+
+				<!-- START INFOS -->
+
+				<section id="infos">
+					<div class="bg-service"><img src="images/background/servicebg.png" alt="">
+						<div class="bg-blue container size">
+							<div>
+								<h2>
+									<span class="green">MON COMPTE</span>
+								</h2>
+								<ul>
+									<li><a href="">Mes commandes</a></li>
+									<li><a href="">Mes retours de marchandise</a></li>
+									<li><a href="">Mes avoirs</a></li>
+									<li><a href="">Mes adresses</a></li>
+									<li><a href="">Mes informations personnelles</a></li>
+									<li><a href="">Mes bons de réduction</a></li>
+								</ul>
+							</div>
+							<div>
+								<h2>
+									<span class="green">INFORMATIONS</span>
+								</h2>
+								<ul>
+									<li><a href="">Aide</a></li>
+									<li><a href="">Qui sommes-nous ?</a></li>
+									<li><a href="">Mentions légales</a></li>
+									<li><a href="">CGV</a></li>
+									<li><a href="">CGU</a></li>
+									<li><a href="">Plan du site</a></li>
+								</ul>
+							</div>
+							<div>
+								<h2>
+									<span class="green">VOS AVANTAGES</span>
+								</h2>
+								<ul>
+									<li><a href="">Livraison à la carte</a></li>
+									<li><a href="">Club de fidélité</a></li>
+									<li><a href="">Parrainage</a></li>
+									<li><a href="">Remise pour les professionnels</a></li>
+									<li><a href="">Paiement sécurisé</a></li>
+								</ul>
+							</div>
+							<div>
+								<h2>
+									<span class="green">SUIVEZ-NOUS</span>
+								</h2>
+								<span>
+									<a href=""><img src="../images/icons/reseauxSociaux/facebook.svg" alt=""></a>
+								</span>
+								<span>
+									<a href=""><img src="../images/icons/reseauxSociaux/Instagramm.svg" alt=""></a>
+								</span>
+							</div>
+						</div>
+
+					</section>
+					<!-- END INFOS -->
+				</main>
+				<!-- END MAIN -->
+
+				<footer class="bg-green">
+					<div class="container">
+						<h1>LA NÎMES
+							<span class="green">'</span>ALERIES</h1>
+						<img src="images/Nav-bar/logo.png" alt="logo de lanimaleries">
+						<p>by &copy;
+							<strong>JULIEND</strong>
+						</p>
+					</div>
+					<a href="https://www.flaticon.com/fr/icones-animees-gratuite/acheter" title="acheter icônes animées">Acheter
+																																																																								            icônes animées créées par Freepik - Flaticon</a>
+				</footer>
+			</body>
+		</body>
+	</html>
+{% endblock %}

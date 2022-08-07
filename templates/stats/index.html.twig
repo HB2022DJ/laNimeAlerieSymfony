@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Les stats !
+{% endblock %}
+
+{% block body %}
+	<p>Nombre de visites :
+		{{ numberOfVisits }}</p>
+	<p>Nombre de paniers :
+		{{ numberOfBaskets }}</p>
+	<p>Nombre de commandes :
+		{{ numberOfOrders }}</p>
+	<p>Conversion de visites en paniers :
+		{{ convVisitToBasket }}
+		%</p>
+	<p>Conversion de paniers en commandes :
+		{{ convBasketToOrder }}
+		%</p>
+	<p>Paniers abandonnés :
+		{{ basketsAbandoned }}
+		%</p>
+	<p>somme totale des ventes :
+		{{ totalSales }}</p>
+	<p>Panier moyen :
+		{{ averageBaskets }}</p>
+
+{% endblock %}

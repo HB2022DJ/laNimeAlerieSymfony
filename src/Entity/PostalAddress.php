@@ -40,12 +40,20 @@ class PostalAddress
 
     #[ORM\Column(nullable: true)]
     #[
+        Assert\Length([
+            'min' => 5,
+            'max' => 50,
+        ]),
         Assert\NotBlank(),
     ]
     private ?string $postalCode = null;
 
     #[ORM\Column(length: 150, nullable: true)]
     #[
+        Assert\Length([
+            'min' => 1,
+            'max' => 50,
+        ]),
         Assert\NotBlank(),
     ]
     private ?string $city = null;

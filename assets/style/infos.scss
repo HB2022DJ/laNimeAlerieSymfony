@@ -1,0 +1,22 @@
+// section infos 
+
+#infos ul li{
+    list-style-type: none;
+}
+#infos{
+    height: 16rem;
+    position: relative;    
+}
+
+.bg-service>img{
+    
+    position: absolute;
+    top: -40%;
+    right: 20%;
+    z-index: 1;
+    max-width: 60%;  
+}
+.size{
+    padding-top: 3.5rem;
+    padding-right: 8rem;
+}

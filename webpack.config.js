@@ -23,6 +23,11 @@ Encore
     .addEntry('script', './assets/script/index.ts')
     .addStyleEntry('style', './assets/style/index.scss')
 
+    .copyFiles([{
+        from: './assets/images',
+        to: 'img/[path][name].[ext]'
+    }, ])
+
 
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.

@@ -1,0 +1,117 @@
+
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    
+    
+
+}
+.logo{
+    display: flex;
+    text-align: start;
+    align-items: center;
+    width: 300px;
+}
+.container-action{
+    width: 200px;
+    
+}
+.container-nav {
+    position: relative;
+    width: 700px;
+    text-align: center;
+}
+.container-nav nav > ul {
+    padding: 0;
+}
+
+.container-nav nav > ul > li {
+    display: inline-block;
+    width: 70px;
+}
+
+.container-nav nav > ul > li:nth-child(1),
+.container-nav nav > ul > li:nth-child(2),
+.container-nav nav > ul > li:nth-child(3) {
+    float: left;
+   
+}
+
+.container-nav nav > ul > li:nth-child(4),
+.container-nav nav > ul > li:nth-child(5),
+.container-nav nav > ul > li:nth-child(6) {
+    float: right;
+}
+
+.container-nav .search {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.search {
+    /* display: inline-block; */
+    height: 32px;
+    border: 1px solid var(--lightgrey);
+    border-radius: 5px;
+    background-color: var(--bg-grey);
+    position: relative;
+  }
+  
+  .search input[type="text"] {
+    display: inline-block;
+    padding: 2px 64px 2px 12px;
+    height: 32px;
+    width: 460px;
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    /* min-width: 460px; */
+  }
+  
+  .search input[type="text"]:focus {
+    border: none;
+    outline: var(--grey);
+    box-shadow: var(--box-shadow);
+  }
+  
+  .search input[type="submit"] {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin: 8px;
+    background-image: url("../images/icons/search.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+  }
+img{
+      max-width: 70px;
+  }
+  
+// BANNIERE TOP
+#banniere{
+  position: relative;
+background: url("../images/background/banniereespace.jpg") center;
+      background-repeat: no-repeat;
+      background-size: 1200px;
+      width:100%;
+      height: 300px;
+      padding-right: 1rem;
+      padding-right:  1rem;
+      margin-bottom: 100px;
+      top:70px;
+      z-index: 1;
+    }
+    

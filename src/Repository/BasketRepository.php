@@ -39,28 +39,60 @@ class BasketRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Basket[] Returns an array of Basket objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('b')
-//            ->andWhere('b.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('b.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    //    /**
+    //     * @return Basket[] Returns an array of Basket objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('b')
+    //            ->andWhere('b.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('b.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
 
-//    public function findOneBySomeField($value): ?Basket
-//    {
-//        return $this->createQueryBuilder('b')
-//            ->andWhere('b.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    //    public function findOneBySomeField($value): ?Basket
+    //    {
+    //        return $this->createQueryBuilder('b')
+    //            ->andWhere('b.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
+
+    // Montant total des commandes payées : panier avec le statut acceptée
+    public function gettotalSalesAmounts(): float
+    {
+        return $this->createQueryBuilder('b')
+            ->select('SUM(contain.unitPrice*cointain.quantity)')
+            ->join('b.contain', 'contain')
+            ->where('b.status = 1')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    // Nombre de commandes abouties (payées) : panier avec le statut acceptée
+    public function getnumberOfCommand(): int
+    {
+        return $this->createQueryBuilder('b')
+            ->select('COUNT(b)')
+            ->where('b.statut = 1')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+
+    // Nombre total de paniers : panier avec le statut accepté,en cours de preparation,expédiée
+    public function getnumberOfBaskets(): int
+    {
+        return $this->createQueryBuilder('b')
+            ->select('COUNT(b)')
+            ->where('b.statut = 1 OR p.statut = 2 OR p.statut = 3')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

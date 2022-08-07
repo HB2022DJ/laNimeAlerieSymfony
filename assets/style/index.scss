@@ -1,1 +1,18 @@
 @import "~bootstrap";
+// reboot bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../../node_modules/bootstrap/scss/carousel";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+// import
+
+@import "variables";
+@import "base";
+@import "classes";
+@import "nav-bar";
+@import "article";
+@import "formulaire";
+@import "services";
+@import "avis";
+@import "infos";

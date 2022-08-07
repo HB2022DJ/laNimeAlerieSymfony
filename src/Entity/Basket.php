@@ -3,18 +3,84 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Controller\AbandonedBasketsController;
+use App\Controller\AverageBasketController;
+use App\Controller\NumberOfBasketsController;
+use App\Controller\NumberOfCommandsController;
+use App\Controller\OrderBasketConversionController;
+use App\Controller\TotalSalesController;
+use App\Controller\VisitsBasketsConversionController;
 use App\Repository\BasketRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Faker\Core\Number;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: BasketRepository::class)]
-#[ApiResource(
-    collectionOperations: ['get' => ["security" => "is_granted('ROLE_STATS')"]],
-    itemOperations: ['get' => ["security" => "is_granted('ROLE_STATS')"]],
-)]
+#[
+    ApiResource(
+        collectionOperations: [
+            'get_NumberBasket' => [
+
+                'security' => ' is_granted("ROLE_STATS")',
+                'method'   => 'GET',
+                'path' => '/stats/NumberBasket',
+                'controller' => NumberOfBasketsController::class,
+            ],
+            'get_NumberOrder' => [
+
+                'security' => ' is_granted("ROLE_STATS")',
+                'method'   => 'GET',
+                'path' => '/stats/NumberCommand',
+                'controller' => NumberOfCommandsController::class,
+            ],
+            'get_AbandonedBasket' => [
+
+                'security' => ' is_granted("ROLE_STATS")',
+                'method'   => 'GET',
+                'path' => '/stats/AbandonedBasket',
+                'controller' => AbandonedBasketsController::class,
+            ],
+            'get_VisitsBasketsConversion' => [
+
+                'security' => ' is_granted("ROLE_STATS")',
+                'method'   => 'GET',
+                'path' => '/stats/VisitsBasketsConversion',
+                'controller' => VisitsBasketsConversionController::class,
+            ],
+            'get_OrderBasketConversion' => [
+
+                'security' => ' is_granted("ROLE_STATS")',
+                'method'   => 'GET',
+                'path' => '/stats/OrderBasketConversion',
+                'controller' => OrderBasketConversionController::class,
+            ],
+            'get_TotalSales' => [
+
+                'security' => ' is_granted("ROLE_STATS")',
+                'method'   => 'GET',
+                'path' => '/stats/TotalSales',
+                'controller' => TotalSalesController::class,
+            ],
+            'get_AverageBaskets' => [
+
+                'security' => ' is_granted("ROLE_STATS")',
+                'method'   => 'GET',
+                'path' => '/stats/AverageBaskets',
+                'controller' => AverageBasketController::class,
+            ],
+        ],
+        itemOperations: [
+            'get' => [
+                'security' => ' is_granted("ROLE_STATS")',
+                'method'   => 'GET',
+
+            ],
+        ]
+    )
+]
 class Basket
 {
     #[ORM\Id]

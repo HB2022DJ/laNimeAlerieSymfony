@@ -1,0 +1,45 @@
+
+// background colors
+.bg-blue{
+    background-color: $bg-blue;
+}
+.bg-white{
+    background-color: $bg-white;
+}
+.bg-green{
+    background-color: $bg-green;
+}
+// colors
+.green{
+    color:$green;
+}
+
+.container-animaux{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0rem;
+    background: $bg-blue;
+}
+.bg-pattounes{
+    display: flex;
+    justify-content: space-around;
+   
+}
+.cart{
+    position: absolute;
+    top: 0;
+    right: 74px;
+    width: 300px;
+background: linear-gradient(145deg, #cacaca, #f0f0f0);
+opacity: 0.60;
+padding: 1rem;
+}
+
+#services{
+    display: flex;
+    margin-bottom: 20rem;
+}
+

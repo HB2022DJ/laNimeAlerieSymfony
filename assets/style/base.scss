@@ -1,0 +1,49 @@
+body{
+    text-align: center;
+    background-color: $bg-white;
+}
+h1{
+    font-size: 1.5rem;
+  
+}
+h2{
+    font-family: $font-h2;
+    font-size: 1rem;
+    color: $black;
+}
+li>a{
+color:$black;
+text-decoration: none;
+font-family: $font-text;
+}
+li>a:hover{
+color:$green;
+text-decoration: none;
+font-family: $font-text;
+}
+p{
+    font-family: $font-text;
+    font-size: .8rem;
+}
+header{
+    position: fixed;
+    left:20px;
+    right: 20px;
+    z-index: 2;
+}
+button{
+    border-radius:  40px;
+    background-color: $bg-green;
+    list-style-type: none;
+}
+// line blue 
+hr{
+    color: $bg-blue;
+    height: 5px !important;
+    width: 50%;
+    margin: 0 auto;
+    
+}
+footer{
+    margin-top: 1.8rem;
+}
