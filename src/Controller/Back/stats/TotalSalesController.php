@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Back\stats;
 
 use App\Repository\BasketRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
