@@ -99,6 +99,11 @@
 img{
       max-width: 70px;
   }
+  a>img:hover{
+    max-width: 100px;
+    border-radius: 50%;
+    border: 5px solid $bg-blue;
+  }
   
 // BANNIERE TOP
 #banniere{

@@ -57,7 +57,7 @@
 					<!-- END BARRE DE RECHERCHE -->
 					<!-- CONNEXION USER -->
 					<div class="container-action">
-						<a href=""><img src="{{ asset('/build/img/icons/codicon_account.svg') }}" width="50" height="50" alt="connexion"></a>
+						<a href="{{ path('app_login') }}"><img src="{{ asset('/build/img/icons/codicon_account.svg') }}" width="50" height="50" alt="connexion"></a>
 						<a href=""><img src="{{ asset('/build/img/icons/gif/panier-unscreen.gif') }}" alt="acces panier"></a>
 					</div>
 				</div>
@@ -95,7 +95,7 @@
 					</div>
 
 					<!-- SELECTION ANIMAUX -->
-					<div class="container-animaux bg-blue">
+					<div class=" container">
 						<a href=""><img src="{{ asset('/build/img/icons/animaux/CHAT.svg') }}" alt="produits pour chat"></a>
 						<a href=""><img src="{{ asset('/build/img/icons/animaux/CHIEN.svg') }}" alt="produit pour chien"></a>
 						<a href=""><img src="{{ asset('/build/img/icons/animaux/RONGEUR.svg') }}" alt="produit pour rongeur"></a>
@@ -147,7 +147,7 @@
 									<span class="green">HYGIENE</span>
 								</h2>
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolore dolor adipisci distinctio
-																																																																																																																																																																																																																															                            dignissimos reprehenderit eos velit ad ipsa officia?</p>
+																																																																																																																																																																																																																																																																																																																                            dignissimos reprehenderit eos velit ad ipsa officia?</p>
 								<button class="btn btn-green">en savoir+<img src="" alt=""></button>
 							</div>
 						</article>
@@ -157,7 +157,7 @@
 									<span class="green">FERMIER</span>
 								</h2>
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolore dolor adipisci distinctio
-																																																																																																																																																																																																																															                            dignissimos reprehenderit eos velit ad ipsa officia?</p>
+																																																																																																																																																																																																																																																																																																																                            dignissimos reprehenderit eos velit ad ipsa officia?</p>
 								<button class="btn btn-green">en savoir+<img src="" alt=""></button>
 							</div>
 						</article>
@@ -181,7 +181,7 @@
 						Je vend toutes sortes de produits, allant des produits bien connus comme
 						<br>
 						les croquettes, les niches ou encore les coussins, en passant par des services 3.0 comme
-																																																																																																																																																				                l’envoi de votre animal dans l’espace .
+																																																																																																																																																																																																										                l’envoi de votre animal dans l’espace .
 						<br>
 						Si vous avez des questions , vous pouvez me contacter ci-dessous :</p>
 
@@ -210,7 +210,7 @@
 
 
 					{# <?php if(!empty($_GET['erreur'])){
-					        echo '<br><p style="color: red">Erreur dans le formulaire ⛔️ Merci de remplir tout les champs correctement 😊 } </p>  #}
+																																																		        echo '<br><p style="color: red">Erreur dans le formulaire ⛔️ Merci de remplir tout les champs correctement 😊 } </p>  #}
 
 
 				</section>
@@ -223,11 +223,11 @@
 							<h2>
 								<span class="green">PAIEMENT SÉCURISÉ</span>
 							</h2>
-							<img src="{{ asset('/build/img/icons/infos/Cadenas de sécurité.svg') }}" alt=" icon cadenas">
+							<img src="{{ asset('/build/img/icons/services/Cadenas de sécurité.svg') }}" alt=" icon cadenas">
 							<div>
-								<img src="{{ asset('/build/img/icons/infos/LOGO_CB.svg') }}" alt="icon carte bancaire">
-								<img src="{{ asset('/build/img/icons/infos/LOGO_PPAL.svg') }}" alt="icon paypal">
-								<img src="{{ asset('/build/img/icons/infos/LOGO_MONEYBACK.svg') }}" alt="icon billet">
+								<img src="{{ asset('/build/img/icons/services/LOGO_CB.svg') }}" alt="icon carte bancaire">
+								<img src="{{ asset('/build/img/icons/services/LOGO_PPAL.svg') }}" alt="icon paypal">
+								<img src="{{ asset('/build/img/icons/services/LOGO_MONEYBACK.svg') }}" alt="icon billet">
 							</div>
 						</div>
 						<div>
@@ -235,7 +235,7 @@
 							<h2>
 								<span class="green">LIVRAISON RAPIDE</span>
 							</h2>
-							<img src="{{ asset('/build/img/icons/infos/fa-solid_truck.svg') }}" alt="icon camion de livraison">
+							<img src="{{ asset('/build/img/icons/services/fa-solid_truck.svg') }}" alt="icon camion de livraison">
 							<p>Toute commande passée avant
 								<br>
 								midi
@@ -247,7 +247,7 @@
 							<h2>
 								<span class="green">FIDÉLITÉ RECOMPENSÉE</span>
 							</h2>
-							<img src="{{ asset('/build/img/icons/infos/Tirelire.svg') }}" alt="icon tirelire">
+							<img src="{{ asset('/build/img/icons/services/Tirelire.svg') }}" alt="icon tirelire">
 							<p>Cumulez des points à chaque
 								<br>
 								achat</p>
@@ -257,7 +257,7 @@
 							<h2>
 								<span class="green">VOYAGE ESPACE</span>
 							</h2>
-							<img src="{{ asset('/build/img/icons/infos/Decollage.svg') }}" alt=" icon fusée">
+							<img src="{{ asset('/build/img/icons/services/Decollage.svg') }}" alt=" icon fusée">
 							<p>Service vers l’infini
 								<br>
 								et au delà !</p>
@@ -266,14 +266,14 @@
 							<h2>
 								<span class="green">MON E-MAIL</span>
 							</h2>
-							<img src="{{ asset('/build/img/icons/infos/ant-design_mail-filled.svg') }}" alt="icon email">
+							<img src="{{ asset('/build/img/icons/services/ant-design_mail-filled.svg') }}" alt="icon email">
 							<p>capard@gmail.com</p>
 						</div>
 						<div>
 							<h2>
 								<span class="green">MON TÉLÉPHONE</span>
 							</h2>
-							<img src="{{ asset('/build/img/icons/infos/Phone.svg') }}" alt="icon telephone">
+							<img src="{{ asset('/build/img/icons/services/Phone.svg') }}" alt="icon telephone">
 							<p>06 xx xx xx xx</p>
 						</div>
 					</div>
@@ -284,11 +284,11 @@
 				<section
 					id="temoignages">
 					<!-- <div class="container-carousel">
-																																																																																																																			                <h2><span class="green">TÉMOIGNAGES</span></h2>
-																																																																																																																			                <hr>
-																																																																																																																			                <img src="" alt="">
-																																																																																																																			                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, impedit?</p>
-																																																																																																																			            </div>  -->
+																																																																																																																																																																                <h2><span class="green">TÉMOIGNAGES</span></h2>
+																																																																																																																																																																                <hr>
+																																																																																																																																																																                <img src="" alt="">
+																																																																																																																																																																                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, impedit?</p>
+																																																																																																																																																																            </div>  -->
 
 					<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
 						<div class="carousel-indicators">
@@ -338,7 +338,7 @@
 				<!-- START INFOS -->
 
 				<section id="infos">
-					<div class="bg-service"><img src="images/background/servicebg.png" alt="">
+					<div class="bg-service"><img src="{{ asset('/build/img/background/servicebg.png') }}" alt="">
 						<div class="bg-blue container size">
 							<div>
 								<h2>
@@ -406,7 +406,7 @@
 						</p>
 					</div>
 					<a href="https://www.flaticon.com/fr/icones-animees-gratuite/acheter" title="acheter icônes animées">Acheter
-																																																																																																																																										            icônes animées créées par Freepik - Flaticon</a>
+																																																																																																																																																																																																            icônes animées créées par Freepik - Flaticon</a>
 				</footer>
 			</body>
 		</body>
